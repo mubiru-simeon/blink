@@ -1,6 +1,5 @@
 "use client";
 
-import LoadingButton from "@/components/LoadingButton";
 import { PasswordInput } from "@/components/PasswordInput";
 import {
   Form,
@@ -16,6 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { login } from "./actions";
+import LoadingButton from "@/components/LoadingButton";
 
 export default function LoginForm() {
   const [error, setError] = useState<string>();
