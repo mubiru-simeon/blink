@@ -13,6 +13,7 @@ const nextConfig = {
         hostname: "utfs.io",
         pathname: `/a/${process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID}/*`,
       },
+      // Add more patterns if needed for other domains
     ],
   },
   rewrites: () => {
@@ -23,6 +24,16 @@ const nextConfig = {
       },
     ];
   },
+  // Additional common configurations
+  reactStrictMode: true,
+  compiler: {
+    // Remove console logs in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Enable React Server Components (if you're using Next.js 13 or later with app directory)
+  // experimental: {
+  //   appDir: true,
+  // },
 };
 
 export default nextConfig;
